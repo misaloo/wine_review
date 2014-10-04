@@ -1,6 +1,6 @@
 class WinesController < ApplicationController
   before_action :set_wine, only: [ :show, :edit, :update, :destroy ]
-
+  
   def index
   	@available_at = Time.now
     @wines = Wine.all
@@ -31,6 +31,8 @@ class WinesController < ApplicationController
     @wine.destroy
     redirect_to wines_url
   end
+ 
+
 
   private
 
@@ -41,4 +43,5 @@ class WinesController < ApplicationController
   def set_wine
   	 @wine = Wine.find(params[:id])
   end
+
 end
