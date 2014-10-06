@@ -1,4 +1,5 @@
-<%= render 'shared/flashes' %>
+<% content_for :title, @wine.name %>
+
 <article class="wine">
   <header>
     <h2><%= @wine.name %></h2>
