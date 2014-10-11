@@ -1,0 +1,15 @@
+<header>Log entries for <%= link_to(@wine.name, @wine) %></header>
+<ol id="log_entries">
+  <% @log_entries.each do |log_entry| %>
+    <li>
+      <span class="log_entry"><%= pluralize(log_entry.rating, 'rating') %></span>
+      <span class="user">by <%= log_entry.name %> </span>
+      <span class="date">
+        <%= time_ago_in_words(log_entry.created_at) %> ago
+      </span>
+      <p>
+        &quot;<%= log_entry.comments %>&quot;
+      </p>
+    </li>
+  <% end %>
+</ol>

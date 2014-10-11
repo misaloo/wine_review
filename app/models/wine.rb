@@ -7,4 +7,5 @@ class Wine < ActiveRecord::Base
   validates :varietal, inclusion: { in: VARIETALS,
     message: "%{value} is not a valid wine varietal." },
     unless: "varietal.blank?"
+  has_many :log_entries
 end
