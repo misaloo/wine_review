@@ -13,12 +13,12 @@
 
 <%= link_to 'All Wines', wines_path %>
  | <%= link_to 'Edit', edit_wine_path(@wine) %>
-
+<br /><br />
  <%= button_to 'Delete', @wine,
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
 
-  <p>
+  <p><br />
   Read all
   <%= link_to pluralize(@wine.log_entries.size, 'log entry'), 
                         wine_log_entries_path(@wine) %>
